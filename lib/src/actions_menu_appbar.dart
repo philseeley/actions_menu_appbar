@@ -29,13 +29,13 @@ class ActionsMenuAppBar extends AppBar {
     List<PopupMenuItem<VoidCallback>> menuActions = [];
 
     for (; i < actions.length; ++i) {
-      Icon icon = actions[i].icon as Icon;
+      IconButton iconButton = actions[i];
 
       menuActions.add(PopupMenuItem<VoidCallback>(
         value: actions[i].onPressed,
         child: ListTile(
-          leading: Icon(icon.icon),
-          title: Text(icon.semanticLabel ?? ''),
+          leading: iconButton.icon,
+          title: Text(iconButton.tooltip ?? ''),
         ),
       ));
     }
